@@ -24,21 +24,22 @@
           <input formControlName="coordenada_Y" type="text" class="validate">
           <label for="coordenada_Y">Coordenada_Y</label>
         </div>
-      <div class="row"></div>
+      <div class="row">
       <div class="input-field col s6">
           <input formControlName="sigla" type="text" class="validate">
           <label for="sigla">Sigla</label>
         </div>
-      <div class="input-field col s6">
+      
+       <div class="input-field col s6">
         <input formControlName="tipo" type="text" class="validate">
         <label for="tipo">Tipo</label>
       </div>
-        
+      
       <div class="row center-align">
-        <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Guardar
-          <i class="material-icons right">save</i>
-        </button>
+        <button routerLink="/aeropuertos/get/" class="btn blue" name="action" style="margin-right: 15px">Cancelar<i class="material-icons right">cancel</i></button> 
+        <button [disabled]="!fgValidacion.valid" class="btn green" type="submit" name="action">Guardar<i class="material-icons right">save</i></button>
       </div>
+    </div>
     </div>
     </form>
   </div>

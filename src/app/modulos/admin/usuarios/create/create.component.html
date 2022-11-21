@@ -12,13 +12,13 @@
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s6">
           <input formControlName="telefono" type="text" class="validate">
           <label for="telefono">Telefono</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field col s6">
           <input formControlName="correo" type="email" class="validate">
           <label for="correo">Correo</label>
           <span class="helper-text" data-error="Correo invalido" data-success="right">Estado</span>
@@ -26,9 +26,8 @@
       </div>
    
       <div class="row center-align">
-        <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit" name="action">Guardar
-          <i class="material-icons right">save</i>
-        </button>
+        <button routerLink="/admin/get/" class="btn blue" name="action" style="margin-right: 15px">Cancelar<i class="material-icons right">cancel</i></button> 
+        <button [disabled]="!fgValidacion.valid" class="btn green" type="submit" name="action">Guardar<i class="material-icons right">save</i></button>
       </div>
     </form>
   </div>

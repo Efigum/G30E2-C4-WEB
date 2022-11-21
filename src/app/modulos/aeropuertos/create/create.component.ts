@@ -30,6 +30,7 @@ export class CreateComponent implements OnInit {
 
 
   ngOnInit(): void {
+    
   }
 
   store(){
@@ -52,6 +53,7 @@ export class CreateComponent implements OnInit {
       alert("Error en el envio");
     })
   }
+  
 
 
 }
