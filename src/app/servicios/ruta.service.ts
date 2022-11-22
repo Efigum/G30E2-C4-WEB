@@ -10,7 +10,8 @@ import { SeguridadService } from './seguridad.service';
 })
 export class RutaService {
 
-  url = "http://localhost:3000"
+  //url = "http://localhost:3000"
+  url = "https://apiloopbackequipo2grupo30.herokuapp.com"
   token: string = ''
 
 

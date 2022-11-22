@@ -10,7 +10,8 @@ import { SeguridadService } from './seguridad.service';
 })
 export class VueloService {
 
-  url = "http://localhost:3000"
+  //url = "http://localhost:3000"
+  url = "https://apiloopbackequipo2grupo30.herokuapp.com"
   token: string = ''
 
   constructor(private http: HttpClient,
