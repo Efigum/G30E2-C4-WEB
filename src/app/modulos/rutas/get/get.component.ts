@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RutaModel } from 'src/app/modelos/ruta.model';
 import { RutaService } from 'src/app/servicios/ruta.service';
+import { AeropuertoModel } from 'src/app/modelos/aeropuerto.model';
+import { AeropuertoService } from 'src/app/servicios/aeropuerto.service';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -10,11 +12,15 @@ import Swal from 'sweetalert2'
 })
 export class GetComponent implements OnInit {
 
-  constructor(private rutaService: RutaService) { }
+  constructor(private rutaService: RutaService, 
+    private aeropuertoService: AeropuertoService,) { }
+
   listado: RutaModel[] = []
+  listadoAeropuertos: AeropuertoModel[] = []
 
   ngOnInit(): void {
     this.getAll()
+    this.getAeropuertos();
   }
 
   getAll(){
@@ -38,7 +44,14 @@ export class GetComponent implements OnInit {
         })
       }
     })
-}
+  }
+  
+  getAeropuertos(){
+    this.aeropuertoService.getAll().subscribe((data: AeropuertoModel[]) => {
+      this.listadoAeropuertos = data
+      console.log(data)
+    })
+  }
 
 
 }

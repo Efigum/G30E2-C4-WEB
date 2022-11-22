@@ -4,31 +4,24 @@
 
         <div class="row">
             <div class="input-field col s4">
-                <input formControlName="fecha_inicio" type="text" class="validate">
+                <input formControlName="fecha_inicio" type="date" class="validate">
                 <label class="active" for="fecha_inicio">Fecha Inicio</label>
             </div>
             <div class="input-field col s4">
-                <input formControlName="hora_inicio" type="text" class="validate">
+                <input formControlName="hora_inicio" type="time" class="validate">
                 <label class="active" for="hora_inicio">Hora Inicio</label>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+        </div>
+            <div class="row">
             <div class="input-field col s4">
-                <input formControlName="fecha_inicio" type="text" class="validate">
+                <input formControlName="fecha_inicio" type="date" class="validate">
                 <label class="active" for="fecha_inicio">Fecha Inicio</label>
             </div>
             <div class="input-field col s4">
-                <input formControlName="hora_fin" type="text" class="validate">
+                <input formControlName="hora_fin" type="time" class="validate">
                 <label class="active" for="hora_fin">Hora Fin</label>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+        </div>
             <div class="row">
                 <div class="input-field col s4">
                     <input formControlName="asientos_vendidos" type="text" class="validate">
@@ -39,17 +32,20 @@
                     <label class="active" for="nombre_piloto">Nombre Piloto</label>
                 </div>
                 <div class="input-field col s4">
-                    <input formControlName="ruta" type="text" class="validate">
-                    <label class="active" for="ruta">Ruta</label>
-                </div>
-
+                    <select class="browser-default" formControlName="ruta">
+                      <option value="" disabled selected>Seleccione la ruta</option>
+                      <option *ngFor="let ruta of listadoRutas" value="{{ruta.origen}}">{{ruta.origen}} - {{ruta.destino}}</option>
+                    </select>
+                  </div>
+                <br><br><br><br>
                 <div class="row center-align">
-                    <button [disabled]="!fgValidacion.valid" class="btn waves-effect waves-light" type="submit"
+                    <button routerLink="/vuelos/get/" class="btn blue" name="action" style="margin-right: 15px">Cancelar<i class="material-icons right">cancel</i></button> 
+                    <button [disabled]="!fgValidacion.valid" class="btn green" type="submit"
                         name="action">Guardar
                         <i class="material-icons right">save</i>
                     </button>
                 </div>
+                
             </div>
-        </div>
-    </form>
+        </form>
 </div>
